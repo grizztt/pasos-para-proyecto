@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Inventario Grizzly</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Gestión de Inventario</h1>
+
+  <!-- Filtros de género y talla -->
+  <div>
+    <label for="filter-gender">Género:</label>
+    <select id="filter-gender">
+      <option value="">Todos</option>
+      <option value="Macho">Macho</option>
+      <option value="Hembra">Hembra</option>
+    </select>
+
+    <label for="filter-size">Talla:</label>
+    <select id="filter-size">
+      <option value="">Todas</option>
+      <option value="S">S</option>
+      <option value="M">M</option>
+      <option value="L">L</option>
+    </select>
+  </div>
+
+  <!-- Formulario -->
+  <form id="product-form">
+    <input type="text" id="product-code" placeholder="Código del producto" required />
+    <input type="text" id="name" placeholder="Nombre" required />
+    <input type="number" id="quantity" placeholder="Cantidad" required />
+    <input type="text" id="size" placeholder="Talla" required />
+    <input type="text" id="gender" placeholder="Género" required />
+    <input type="number" id="price" placeholder="Precio" step="0.01" required />
+    <input type="text" id="qr-code" placeholder="Código QR" required />
+    <button type="submit">Agregar producto</button>
+  </form>
+
+  <!-- Tabla de productos -->
+  <table>
+    <thead>
+      <tr>
+        <th>Seleccionar</th>
+        <th>Código</th>
+        <th>Nombre</th>
+        <th>Cantidad</th>
+        <th>Talla</th>
+        <th>Género</th>
+        <th>Precio</th>
+        <th>QR</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody id="product-table-body"></tbody>
+  </table>
+
+  <script src="app.js"></script>
+</body>
+</html>
