@@ -1,3 +1,24 @@
+const CORRECT_PASSWORD = "1234"; // Cambia esto por tu clave
+
+function checkPassword() {
+  const input = document.getElementById('accessPassword').value;
+  if (input === CORRECT_PASSWORD) {
+    localStorage.setItem("accessGranted", "true");
+    showApp();
+  } else {
+    document.getElementById("loginError").textContent = "❌ Contraseña incorrecta.";
+  }
+}
+
+function showApp() {
+  document.getElementById("loginScreen").style.display = "none";
+  document.getElementById("mainApp").style.display = "block";
+}
+
+// Al cargar la página, verifica si ya se autenticó
+if (localStorage.getItem("accessGranted") === "true") {
+  showApp();
+}
 const form = document.getElementById('productForm');
 const inventoryBody = document.getElementById('inventoryBody');
 const status = document.getElementById('status');

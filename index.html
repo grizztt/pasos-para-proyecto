@@ -34,7 +34,16 @@
     <button type="submit">Agregar producto</button>
   </form>
 
-  <div id="reader"></div>
+  <div id="loginScreen">
+    <h2>Acceso restringido</h2>
+    <input type="password" id="accessPassword" placeholder="Contraseña">
+    <button onclick="checkPassword()">Entrar</button>
+    <p id="loginError" style="color:red;"></p>
+  </div>
+  
+  <div id="mainApp" style="display: none;">
+    <!-- Aquí va TODO lo que ya tenías: el formulario, tabla, lector QR, etc -->
+  </div>
   <p id="status"></p>
 
   <table>
